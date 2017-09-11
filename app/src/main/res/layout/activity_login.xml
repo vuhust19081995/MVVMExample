@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.workspace.mvvmlogin.screen.login.LoginViewModel"
+            />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.workspace.mvvmlogin.screen.login.LoginActivity"
+        >
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/hint_enter_user_name"
+            android:text="@={viewModel.userName}"
+            />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/hint_enter_password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.password}"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnLogin"
+            android:layout_width="348dp"
+            android:layout_height="50dp"
+            android:onClick="@{viewModel.onLoginClick()}"
+            android:text="@string/text_btn_login"
+            android:textAllCaps="false"
+            />
+
+    </LinearLayout>
+</layout>

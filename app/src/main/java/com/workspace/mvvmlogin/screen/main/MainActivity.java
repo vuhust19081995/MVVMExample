@@ -1,7 +1,8 @@
-package com.workspace.mvvmlogin;
+package com.workspace.mvvmlogin.screen.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import com.workspace.mvvmlogin.R;
 
 public class MainActivity extends AppCompatActivity {
 
