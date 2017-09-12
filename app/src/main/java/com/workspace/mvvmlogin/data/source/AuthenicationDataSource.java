@@ -1,6 +1,6 @@
 package com.workspace.mvvmlogin.data.source;
 
-import com.workspace.mvvmlogin.data.model.User;
+import com.workspace.mvvmlogin.data.model.Admin;
 
 /**
  * Created by workspace on 11/09/2017.
@@ -13,5 +13,5 @@ public interface AuthenicationDataSource {
         void onFailed(String message);
     }
 
-    void login(String userName,String password,Callback<User> callback);
+    void login(String userName,String password,Callback<Admin> callback);
 }

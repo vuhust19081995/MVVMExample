@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.workspace.mvvmlogin.R;
 import com.workspace.mvvmlogin.data.source.AuthenicationRepository;
-import com.workspace.mvvmlogin.data.source.remote.AuthenicationLocalDataSource;
+import com.workspace.mvvmlogin.data.source.local.AuthenicationLocalDataSource;
 import com.workspace.mvvmlogin.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {

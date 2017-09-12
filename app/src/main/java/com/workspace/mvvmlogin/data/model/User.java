@@ -1,43 +1,50 @@
 package com.workspace.mvvmlogin.data.model;
 
-import java.util.Observable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by workspace on 11/09/2017.
+ * Created by workspace on 13/09/2017.
  */
 
-public class User extends Observable {
-    private int mID;
-    private String mUserName;
-    private String mPassword;
+public class User {
+    @SerializedName("login")
+    @Expose
+    private String login;
+    @SerializedName("id")
+    @Expose
+    private int id;
+    @SerializedName("avatar_url")
+    @Expose
+    private String avatarUrl;
 
-    public User(int ID, String userName, String password) {
-        mID = ID;
-        mUserName = userName;
-        mPassword = password;
+    public User(String login, int id, String avatarUrl) {
+        this.login = login;
+        this.id = id;
+        this.avatarUrl = avatarUrl;
     }
 
-    public int getID() {
-        return mID;
+    public String getLogin() {
+        return login;
     }
 
-    public void setID(int ID) {
-        mID = ID;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getUserName() {
-        return mUserName;
+    public int getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        mUserName = userName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPassword() {
-        return mPassword;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setPassword(String password) {
-        mPassword = password;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }
