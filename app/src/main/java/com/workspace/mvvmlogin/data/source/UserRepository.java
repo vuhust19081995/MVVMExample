@@ -1,7 +1,8 @@
 package com.workspace.mvvmlogin.data.source;
 
 import com.workspace.mvvmlogin.data.model.User;
-import com.workspace.mvvmlogin.data.source.remote.api.service.UserApi;
+import com.workspace.mvvmlogin.data.source.remote.UserRemoteDataSource;
+import io.reactivex.Observable;
 import java.util.List;
 
 /**
@@ -9,14 +10,14 @@ import java.util.List;
  */
 
 public class UserRepository implements UserDataSource.RemoteDataSource {
-    private UserDataSource.RemoteDataSource mRemoteDataSource;
+    private UserRemoteDataSource mUserRemoteDataSource;
 
-    public UserRepository(UserDataSource.RemoteDataSource remoteDataSource) {
-        mRemoteDataSource = remoteDataSource;
+    public UserRepository(UserRemoteDataSource userRemoteDataSource) {
+        mUserRemoteDataSource = userRemoteDataSource;
     }
 
     @Override
-    public void getUsers(UserApi userApi, UserDataSource.Callback<List<User>> callback) {
-        mRemoteDataSource.getUsers(userApi,callback);
+    public Observable<List<User>> getUsers() {
+        return mUserRemoteDataSource.getUsers();
     }
 }

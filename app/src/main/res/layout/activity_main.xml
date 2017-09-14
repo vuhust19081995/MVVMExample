@@ -9,8 +9,9 @@
             name="viewModel"
             type="com.workspace.mvvmlogin.screen.main.MainViewModel"
             />
+        <variable name="view" type="android.view.View"/>
     </data>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.workspace.mvvmlogin.screen.main.MainActivity"
@@ -20,10 +21,17 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:recyclerAdapter="@{viewModel.adapter}"
+            app:recyclerAdapter="@{viewModel.userAdapter}"
             app:layoutManager="LinearLayoutManager"
             >
         </android.support.v7.widget.RecyclerView>
 
-    </LinearLayout>
+        <ProgressBar
+            android:visibility="@{viewModel.complete ? view.GONE : view.VISIBLE}"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+
+    </RelativeLayout>
 </layout>

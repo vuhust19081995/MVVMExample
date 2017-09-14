@@ -1,8 +1,8 @@
 package com.workspace.mvvmlogin.data.source.remote.api.service;
 
 import com.workspace.mvvmlogin.data.model.User;
-import java.util.ArrayList;
-import retrofit2.Call;
+import io.reactivex.Observable;
+import java.util.List;
 import retrofit2.http.GET;
 
 /**
@@ -11,5 +11,5 @@ import retrofit2.http.GET;
 
 public interface UserApi {
     @GET("/users/follower/followers")
-    Call<ArrayList<User>> getUsers();
+    Observable<List<User>> getUsers();
 }

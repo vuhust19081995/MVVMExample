@@ -1,7 +1,7 @@
 package com.workspace.mvvmlogin.data.source;
 
 import com.workspace.mvvmlogin.data.model.User;
-import com.workspace.mvvmlogin.data.source.remote.api.service.UserApi;
+import io.reactivex.Observable;
 import java.util.List;
 
 /**
@@ -10,13 +10,7 @@ import java.util.List;
 
 public interface UserDataSource {
 
-    interface Callback<T> {
-        void onSuccess(T data);
-
-        void onFailure(String msg);
-    }
-
     interface RemoteDataSource {
-        void getUsers(UserApi userApi,Callback<List<User>> callback);
+        Observable<List<User>> getUsers();
     }
 }

@@ -27,7 +27,7 @@ public abstract class BaseRecyclerViewAdapter<V extends RecyclerView.ViewHolder>
     /**
      * OnRecyclerViewItemClickListener
      */
-    public interface OnRecyclerViewItemClickListener<T> {
-        void onItemRecyclerViewClick(T item);
+    public interface OnRecyclerViewItemClickListener<T>{
+        void onItemRecyclerViewClick(T user);
     }
 }

@@ -47,24 +47,19 @@ public class LoginViewModel extends BaseObservable {
         this.password = password;
     }
 
-    public View.OnClickListener onLoginClick() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuthenicationRepository.login(userName, password,
-                        new AuthenicationDataSource.Callback<Admin>() {
-                            @Override
-                            public void onSuccess(Admin data) {
-                                Intent mainActivity = new Intent(mContext, MainActivity.class);
-                                mContext.startActivity(mainActivity );
-                            }
+    public void onClick(View view) {
+        mAuthenicationRepository.login(userName, password,
+                new AuthenicationDataSource.Callback<Admin>() {
+                    @Override
+                    public void onSuccess(Admin data) {
+                        Intent mainActivity = new Intent(mContext, MainActivity.class);
+                        mContext.startActivity(mainActivity);
+                    }
 
-                            @Override
-                            public void onFailed(String message) {
-                                Toast.makeText(mContext, "Error!", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        };
+                    @Override
+                    public void onFailed(String message) {
+                        Toast.makeText(mContext, "Error!", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

@@ -1,6 +1,7 @@
 package com.workspace.mvvmlogin;
 
 import android.app.Application;
+import android.content.Context;
 import com.workspace.mvvmlogin.data.source.remote.api.service.UserServiceClient;
 
 /**
@@ -8,11 +9,17 @@ import com.workspace.mvvmlogin.data.source.remote.api.service.UserServiceClient;
  */
 
 public class MainApplication extends Application {
-    private static final int REALM_SCHEMA_VERSION = 0;
+
+    private static Context context;
+
+    public static Context getContext() {
+        return context;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        context = getApplicationContext();
         UserServiceClient.initialize(this);
     }
 }

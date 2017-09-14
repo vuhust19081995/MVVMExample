@@ -8,11 +8,10 @@
     </data>
 
     <LinearLayout
-        android:onClick="@{viewModel::onItemClicked}"
+        android:onClick="@{(view) -> viewModel.onItemClicked(view)}"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         >
-
         <TextView
             android:text="@{viewModel.userLogin}"
             android:textSize="@dimen/tvUser"
@@ -20,6 +19,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
-
     </LinearLayout>
 </layout>

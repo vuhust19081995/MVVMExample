@@ -1,6 +1,5 @@
 package com.workspace.mvvmlogin.screen.main;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,15 +18,13 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ItemUserViewHolder> {
     private List<User> mUsers;
     private BaseRecyclerViewAdapter.OnRecyclerViewItemClickListener<User> mItemClickListener;
-    private Context mContext;
 
-    public UserAdapter(List<User> users, Context context) {
-        mContext = context;
+    public UserAdapter(List<User> users) {
         mUsers = new ArrayList<>();
         if (users == null) {
             return;
         }
-        mUsers.addAll(users);
+        mUsers = users;
     }
 
     @Override

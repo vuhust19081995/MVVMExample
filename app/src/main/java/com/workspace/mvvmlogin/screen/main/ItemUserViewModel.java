@@ -1,15 +1,16 @@
 package com.workspace.mvvmlogin.screen.main;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.view.View;
 import com.workspace.mvvmlogin.data.model.User;
 import com.workspace.mvvmlogin.screen.BaseRecyclerViewAdapter;
-import java.util.Observable;
 
 /**
  * Created by workspace on 13/09/2017.
  */
 
-public class ItemUserViewModel extends Observable {
+public class ItemUserViewModel extends BaseObservable{
     private User mUser;
     private BaseRecyclerViewAdapter.OnRecyclerViewItemClickListener<User> mItemClickListener;
 
@@ -19,6 +20,7 @@ public class ItemUserViewModel extends Observable {
         mItemClickListener = itemClickListener;
     }
 
+    @Bindable
     public String getUserLogin(){
         return mUser.getLogin();
     }
