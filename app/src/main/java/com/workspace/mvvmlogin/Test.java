@@ -6,4 +6,5 @@ package com.workspace.mvvmlogin;
 
 public class Test {
     private int mID;
+    private String mName;
 }
