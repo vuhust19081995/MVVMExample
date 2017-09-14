@@ -1,6 +1,6 @@
 package com.workspace.mvvmlogin.data.source;
 
-import com.workspace.mvvmlogin.data.model.Admin;
+import io.reactivex.Observable;
 
 /**
  * Created by workspace on 11/09/2017.
@@ -8,10 +8,5 @@ import com.workspace.mvvmlogin.data.model.Admin;
 
 public interface AuthenicationDataSource {
 
-    interface Callback<T>{
-        void onSuccess(T data);
-        void onFailed(String message);
-    }
-
-    void login(String userName,String password,Callback<Admin> callback);
+    Observable<Boolean> login(String userName,String password);
 }

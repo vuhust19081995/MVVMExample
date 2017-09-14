@@ -1,6 +1,6 @@
 package com.workspace.mvvmlogin.data.source;
 
-import com.workspace.mvvmlogin.data.model.Admin;
+import io.reactivex.Observable;
 
 /**
  * Created by workspace on 11/09/2017.
@@ -14,9 +14,7 @@ public class AuthenicationRepository implements AuthenicationDataSource {
     }
 
     @Override
-    public void login(String userName, String password, Callback<Admin> callback) {
-        mLocalDataSource.login(userName,password,callback);
+    public Observable<Boolean> login(String userName, String password) {
+        return mLocalDataSource.login(userName,password);
     }
-
-
 }

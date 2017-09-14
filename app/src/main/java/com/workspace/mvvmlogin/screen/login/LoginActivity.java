@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel mLoginViewModel;
     private AuthenicationRepository mAuthenicationRepository;
     private ActivityLoginBinding mActivityLoginBinding;
+    private LoginPresenter mLoginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public class LoginActivity extends AppCompatActivity {
         String userName = mActivityLoginBinding.edtUserName.getText().toString();
         String password = mActivityLoginBinding.edtPassword.getText().toString();
         mLoginViewModel = new LoginViewModel(mAuthenicationRepository,userName,password,this);
+        mLoginPresenter = new LoginPresenter(mLoginViewModel,mAuthenicationRepository);
+        mLoginViewModel.setLoginPresenter(mLoginPresenter);
         mActivityLoginBinding.setViewModel(mLoginViewModel);
     }
 }
